@@ -1,0 +1,1230 @@
+310225552@YY017255 MINGW64 /c/GIT/Uma
+$ git init amk
+Initialized empty Git repository in C:/GIT/Uma/amk/.git/
+
+310225552@YY017255 MINGW64 /c/GIT/Uma
+$ cd amk/
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        1.txt
+        2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git add .
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   1.txt
+        new file:   2.txt
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git commit -m"added two files into master branch"
+[master (root-commit) 737f44b] added two files into master branch
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1.txt
+ create mode 100644 2.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git log
+commit 737f44bb14bd0c6ddcdb64e7b22089830ff42772
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:37:04 2016 +0530
+
+    added two files into master branch
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch -b develop
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged | --no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    --set-upstream        change upstream info
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      Unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    --list                list branch names
+    -l, --create-reflog   create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --no-merged <commit>  print only not merged branches
+    --merged <commit>     print only merged branches
+    --column[=<style>]    list branches in columns
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch develop
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git log
+commit 737f44bb14bd0c6ddcdb64e7b22089830ff42772
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:37:04 2016 +0530
+
+    added two files into master branch
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   1.txt
+        modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git add 1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   2.txt
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git commit -m"modified 1.txt file"
+[develop 3d7747c] modified 1.txt file
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git commit -am"comminting 2.txt file"
+[develop 0551852] comminting 2.txt file
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git log
+commit 0551852801e89769a260f9e0be1c0364fcc33cd2
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:43:07 2016 +0530
+
+    comminting 2.txt file
+
+commit 3d7747cc1768f3a81d8da99f2a3cf25377f41425
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:42:35 2016 +0530
+
+    modified 1.txt file
+
+commit 737f44bb14bd0c6ddcdb64e7b22089830ff42772
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:37:04 2016 +0530
+
+    added two files into master branch
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git checkout 3d7747cc17
+Note: checking out '3d7747cc17'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 3d7747c... modified 1.txt file
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk ((3d7747c...))
+$ git branch feature/develop
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk ((3d7747c...))
+$ git checkout feature/develop
+Switched to branch 'feature/develop'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git status
+On branch feature/develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git commit -am"added content into 2.txt"
+[feature/develop aacc538] added content into 2.txt
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git lo
+git: 'lo' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        log
+        flow
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git log
+commit aacc538a5af41f72bb25d04dcad6c44c286d7130
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:47:58 2016 +0530
+
+    added content into 2.txt
+
+commit 3d7747cc1768f3a81d8da99f2a3cf25377f41425
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:42:35 2016 +0530
+
+    modified 1.txt file
+
+commit 737f44bb14bd0c6ddcdb64e7b22089830ff42772
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:37:04 2016 +0530
+
+    added two files into master branch
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git branch
+  develop
+* feature/develop
+  master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git checkout develop
+Switched to branch 'develop'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git merge feature/develop
+Auto-merging 2.txt
+CONFLICT (content): Merge conflict in 2.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop|MERGING)
+$ git status
+On branch develop
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop|MERGING)
+$ git add 2.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop|MERGING)
+$ git commit -m"resolved conflicts"
+[develop ac9b47f] resolved conflicts
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git checkout master
+Switched to branch 'master'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git merge develop
+Updating 737f44b..ac9b47f
+Fast-forward
+ 1.txt | 1 +
+ 2.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git commit -am"merged from develop"
+On branch master
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git log
+commit ac9b47f1d49716c922ab848599d592f8609613d3
+Merge: 0551852 aacc538
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:50:25 2016 +0530
+
+    resolved conflicts
+
+commit aacc538a5af41f72bb25d04dcad6c44c286d7130
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:47:58 2016 +0530
+
+    added content into 2.txt
+
+commit 0551852801e89769a260f9e0be1c0364fcc33cd2
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:43:07 2016 +0530
+
+    comminting 2.txt file
+
+commit 3d7747cc1768f3a81d8da99f2a3cf25377f41425
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:42:35 2016 +0530
+
+    modified 1.txt file
+
+commit 737f44bb14bd0c6ddcdb64e7b22089830ff42772
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:37:04 2016 +0530
+
+    added two files into master branch
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git log -2
+commit ac9b47f1d49716c922ab848599d592f8609613d3
+Merge: 0551852 aacc538
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:50:25 2016 +0530
+
+    resolved conflicts
+
+commit aacc538a5af41f72bb25d04dcad6c44c286d7130
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:47:58 2016 +0530
+
+    added content into 2.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ ls
+1.txt  2.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git mv 2.txt 1.1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        renamed:    2.txt -> 1.1.txt
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git commit -m"2txt file renamed to 1.1"
+[develop 1a91f8b] 2txt file renamed to 1.1
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename 2.txt => 1.1.txt (100%)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ ls
+1.1.txt  1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git fetch
+fatal: No remote repository specified.  Please, specify either a URL or a
+remote name from which new revisions should be fetched.
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ ls
+1.1.txt  1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git diff 1.1.txt 1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ pwd
+/c/GIT/Uma/amk
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git diff
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git diff /c/GIT/Uma/amk/1.txt /c/GIT/Uma/amk/1.1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git diff 1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git rm 1.1.txt
+rm '1.1.txt'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    1.1.txt
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git commit -m"deleted 1.1"
+[develop d48dfaf] deleted 1.1
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 1.1.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git tag
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git tag 1
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git tag
+1
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git status
+On branch develop
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git branch
+* develop
+  feature/develop
+  master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (develop)
+$ git checkout feature/develop
+Switched to branch 'feature/develop'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git status
+On branch feature/develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git commit -am"reset command"
+[feature/develop c39d25e] reset command
+ Committer: Muralikrishna <ambati.muralikrishna@philips.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git reset
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git status
+On branch feature/develop
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git reset --hard
+HEAD is now at c39d25e reset command
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git log -2
+commit c39d25e8529b16a5e91e0ec0fb961ec873d14d26
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 18:01:32 2016 +0530
+
+    reset command
+
+commit aacc538a5af41f72bb25d04dcad6c44c286d7130
+Author: Muralikrishna <ambati.muralikrishna@philips.com>
+Date:   Sat Oct 22 17:47:58 2016 +0530
+
+    added content into 2.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git remote add https://github.com/umamahesh123/amk.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git remote add origin https://github.com/umamahesh123/amk.git
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git status
+On branch feature/develop
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: The current branch feature/develop has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature/develop
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git push origin feature/develop
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 994 bytes | 0 bytes/s, done.
+Total 12 (delta 0), reused 0 (delta 0)
+To https://github.com/umamahesh123/amk.git
+ * [new branch]      feature/develop -> feature/develop
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git push origin develop
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 1004 bytes | 0 bytes/s, done.
+Total 10 (delta 0), reused 0 (delta 0)
+To https://github.com/umamahesh123/amk.git
+ * [new branch]      develop -> develop
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git push origin master
+To https://github.com/umamahesh123/amk.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/umamahesh123/amk.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git fetch
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/umamahesh123/amk
+ * [new branch]      master     -> origin/master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git checkout master
+Switched to branch 'master'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ ls
+1.txt  2.txt
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git push origin master
+To https://github.com/umamahesh123/amk.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/umamahesh123/amk.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git pull origin master
+From https://github.com/umamahesh123/amk
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git pull origin master
+From https://github.com/umamahesh123/amk
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git push origin master
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 362 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/umamahesh123/amk.git
+   5ee6b19..b1f07f1  master -> master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+  feature/develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch -a
+  develop
+  feature/develop
+* master
+  remotes/origin/develop
+  remotes/origin/feature/develop
+  remotes/origin/master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git tag
+1
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git push origin 1
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/umamahesh123/amk.git
+ * [new tag]         1 -> 1
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch -D feature/develop
+Deleted branch feature/develop (was c39d25e).
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch -a
+  develop
+* master
+  remotes/origin/develop
+  remotes/origin/feature/develop
+  remotes/origin/master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git fetch
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git pull origin master
+From https://github.com/umamahesh123/amk
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git reset --hard
+HEAD is now at b1f07f1 Merge branch 'master' of https://github.com/umamahesh123/amk
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git pull origin feature/develop
+From https://github.com/umamahesh123/amk
+ * branch            feature/develop -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ 1.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git branch
+  develop
+* master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (master)
+$ git checkout feature/develop
+Branch feature/develop set up to track remote branch feature/develop from origin.
+Switched to a new branch 'feature/develop'
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git branch
+  develop
+* feature/develop
+  master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$ git branch -a
+  develop
+* feature/develop
+  master
+  remotes/origin/develop
+  remotes/origin/feature/develop
+  remotes/origin/master
+
+310225552@YY017255 MINGW64 /c/GIT/Uma/amk (feature/develop)
+$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
